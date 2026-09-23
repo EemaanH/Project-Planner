@@ -6,7 +6,7 @@ addObjectButton.addEventListener("click", function()
 const width = Number(prompt("Enter object width in inches:"));
 const height - Number(prompt("Enter object height in inches"));
 
-  const object = document.createElemtn("div");
+  const object = document.createElement("div");
 
   const scale = 25;
 
