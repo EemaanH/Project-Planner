@@ -39,6 +39,5 @@ button
   background-color: lightblue;
   border: 2px solid black;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  box-sizing: border-box;
 }
