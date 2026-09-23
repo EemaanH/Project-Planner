@@ -1,1 +1,36 @@
+body
+{
+  font-family: Arial, sans-serif;
+  margin: 40px;
+}
+
+h1
+{
+  text-align: center;
+}
+
+.controls
+{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#display
+{
+  width: 600px
+  height: 450px
+  border: 3px solid black;
+  margin: auto;
+  position: relative;
+  background-color: #f5f5f5;
+}
+
+button
+{
+  padding: 10px 16px;
+  cursor: pointer;
+}
 
