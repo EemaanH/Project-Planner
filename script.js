@@ -6,14 +6,14 @@ let objectCount = 0;
 addObjectButton.addEventListener("click", function()
 {
   const displayWidth = Number(
-    document.getElementByID("displayWidth").value
+    document.getElementById("displayWidth").value
     );
 
   const displayHeight = Number(
     document.getElementById("displayHeight").value
     );
 
-  const objectName = prompt("What is the name of this object?";
+  const objectName = prompt("What is the name of this object?");
 
   const objectWidth = Number(
     prompt("Enter object width in inches:")
@@ -48,12 +48,12 @@ object.classList.add("object");
   object.style.height = `${objectHeight * scale}px`;
   
 object.style.left = `${20 + objectCount * 30}px`;
-object.style.Top = `${20 + objectCount * 30}px`;
+object.style.top = `${20 + objectCount * 30}px`;
 
 object.textContent = objectName;
 
 object.style.display = "flex";
-object.style.alignItems = "canter";
+object.style.alignItems = "center";
 object.style.justifyContent = "center";
 object.style.textAlign = "center";
 
