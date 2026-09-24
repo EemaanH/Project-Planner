@@ -84,9 +84,17 @@ document.addEventListener("mousemove", function(event)
           {
             return;
           }
+            let newLeft = event.clientX - offsetX;
+            let newTop = event.clientY - offsetY;
 
-        object.style.left = `${event.clientX - offsetX}px`;
-        object.style.top = `${event.clientY - offsetY}px`;
+          const maxLeft = display.clientWidth - object.offsetWidth;
+          const maxTop = display.clientHeight - object.offsetHeight;
+
+          newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+          newTop = Math.max(0, Math.min(newTop, maxTop));
+
+          object.style.left = `${newLeft}px`;
+          object.style.top = `${newTop}px`;
           });
 
 document.addEventListener("mouseup", function()
