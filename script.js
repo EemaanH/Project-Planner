@@ -4,6 +4,7 @@ const objectPanel = document.getElementById("objectPanel");
 const display = document.getElementById("display");
 
 let objectCount = 0;
+let selectedObject = null;
 
 //Show the Add Object Panel
 addObjectButton.addEventListener("click", function()
@@ -120,6 +121,15 @@ document.addEventListener("mousemove", function(event)
 document.addEventListener("mouseup", function()
           {
             isDragging = false;
+          });
+
+document.addEventListener("keydown", function(event)
+          {
+             if (event.key == "Delete" && selectedObject)
+             {
+                selectedObject.remove();
+                selectedObject = null;
+             }
           });
 }
 
