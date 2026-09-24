@@ -8,6 +8,7 @@ let objectCount = 0;
 //Show the Add Object Panel
 addObjectButton.addEventListener("click", function()
 {
+   alert("The button works!");
    objectPanel.style.display = "block";
 });
 
