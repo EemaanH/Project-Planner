@@ -132,5 +132,8 @@ document.addEventListener("keydown", function(event)
                 selectedObject = null;
              }
           });
-
+document.addEventListener("keydown", function(event)
+         {
+            alert(event.key);
+         });
   
