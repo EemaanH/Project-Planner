@@ -8,7 +8,7 @@ let objectCount = 0;
 //Show the Add Object Panel
 addObjectButton.addEventListener("click", function()
 {
-  objectPanel.style.display = "block";
+  alert("The button works!")
 });
 
 // Create the object
