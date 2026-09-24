@@ -74,6 +74,15 @@ makeDraggable(object);
 objectCount++;
 });
 
+// Clear the form
+document.getElementById("objectName").value = "";
+
+document.getElementById("objectHeight").value = "";
+
+document.getElementById("objectHeight").value = "";
+});
+
+//Make Objects Draggable 
 function makeDraggable(object)
 {
   let isDragging = false;
