@@ -82,7 +82,6 @@ document.addEventListener("mousemove", function(event)
         {
           if (!isDragging)
             return;
-        }
 
         object.style.left = 
           `${event.clientX - offsetX}px`;
