@@ -61,3 +61,38 @@ display.appendChild(object);
 
 objectCount++;
 });
+
+function makeDraggable(object)
+{
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  onject.addEventListener("mousedown", function(event)
+      {
+        isDragging = true;
+
+        offsetX = event.clientX - object.offsetLeft;
+        offsetY = event.clientY - object.offsetTop;
+      });
+
+document.addEventListener("mousemove". function(event)
+        {
+          if (!isDragging)
+            return;
+        }
+
+        object.style.left = 
+          `${event.clientX - offsetX}px';
+
+          object.style.top = 
+          `${event.clientY - offsetY}px`;
+          });
+
+document.addEventListener("mouseup", function()
+          {
+            isDragging = false;
+          });
+}
+
+  
