@@ -59,6 +59,8 @@ object.style.textAlign = "center";
 
 display.appendChild(object);
 
+makeDraggable(object);
+
 objectCount++;
 });
 
@@ -68,7 +70,7 @@ function makeDraggable(object)
   let offsetX = 0;
   let offsetY = 0;
 
-  onject.addEventListener("mousedown", function(event)
+  object.addEventListener("mousedown", function(event)
       {
         isDragging = true;
 
@@ -76,14 +78,14 @@ function makeDraggable(object)
         offsetY = event.clientY - object.offsetTop;
       });
 
-document.addEventListener("mousemove". function(event)
+document.addEventListener("mousemove", function(event)
         {
           if (!isDragging)
             return;
         }
 
         object.style.left = 
-          `${event.clientX - offsetX}px';
+          `${event.clientX - offsetX}px`;
 
           object.style.top = 
           `${event.clientY - offsetY}px`;
