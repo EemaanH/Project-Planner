@@ -122,6 +122,7 @@ document.addEventListener("mouseup", function()
           {
             isDragging = false;
           });
+}
 
 document.addEventListener("keydown", function(event)
           {
@@ -131,6 +132,5 @@ document.addEventListener("keydown", function(event)
                 selectedObject = null;
              }
           });
-}
 
   
