@@ -1,6 +1,6 @@
 const addObjectButton = document.getElementById("addObject");
 const createObjectButton = document.getElementById("createObject");
-const objectPanel = document.getElementbyId("objectPanel");
+const objectPanel = document.getElementById("objectPanel");
 const display = document.getElementById("display");
 
 let objectCount = 0;
@@ -12,17 +12,17 @@ addObjectButton.addEventListener("click", function()
 });
 
 // Create the object
-createObjectButton.addEvent Listener("click", function()
+createObjectButton.addEventListener("click", function()
 {
   const displayWidth = Number(
     document.getElementById("displayWidth").value
   );
 
-  const displayHeight Number(
+  const displayHeight = Number(
     document.getElementById("displayHeight").value
   );
 
-  const objectName = Number(
+  const objectName =
     document.getElementById("objectName").value;
 
   const objectWidth = Number(
@@ -72,12 +72,11 @@ display.appendChild(object);
 makeDraggable(object);
 
 objectCount++;
-});
-
+  
 // Clear the form
 document.getElementById("objectName").value = "";
 
-document.getElementById("objectHeight").value = "";
+document.getElementById("objectWidth").value = "";
 
 document.getElementById("objectHeight").value = "";
 });
