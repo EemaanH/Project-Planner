@@ -1,15 +1,38 @@
 const addObjectButton = document.getElementById("addObject");
+const createObjectButton = document.getElementById("createObject");
+const objectPanel = document.getElementbyId("objectPanel");
 const display = document.getElementById("display");
 
 let objectCount = 0;
 
+//Show the Add Object Panel
 addObjectButton.addEventListener("click", function()
 {
-  const objectPanel = document.getElementById("objectPanel");
-
   objectPanel.style.display = "block";
 });
 
+// Create the object
+createObjectButton.addEvent Listener("click", function()
+{
+  const displayWidth = Number(
+    document.getElementById("displayWidth").value
+  );
+
+  const displayHeight Number(
+    document.getElementById("displayHeight").value
+  );
+
+  const objectName = Number(
+    document.getElementById("objectName").value;
+
+  const objectWidth = Number(
+    document.getElementById("objectWidth").value
+  );
+
+  const objectHeight = Number(
+    document.getElementById("objectHeight").value
+  );
+  
   if (
     !objectName ||
     objectWidth <= 0 ||
