@@ -46,6 +46,7 @@ button
 
 #objectPanel
 {
+  display: none;
   width: 300px;
   margin: 20px auto;
   padding: 20px;
@@ -70,7 +71,7 @@ button
 
 #objectPanel input
 {
-  width: 100%
+  width: 100%;
   padding: 8px;
   margin-top: 5px;
   box-sizing: border-box;
@@ -78,7 +79,7 @@ button
 
 #createObject
 {
-  width: 100%
+  width: 100%;
   padding: 10px;
   cursor: pointer;
 }
