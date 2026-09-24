@@ -90,6 +90,8 @@ function makeDraggable(object)
 
   object.addEventListener("mousedown", function(event)
       {
+        selectedObject = object;
+         
         isDragging = true;
 
         offsetX = event.clientX - object.offsetLeft;
