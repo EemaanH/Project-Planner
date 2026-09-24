@@ -134,10 +134,13 @@ document.addEventListener("keydown", function(event)
           });
 document.addEventListener("keydown", function(event)
          {
-            alert(event.key);
+             console.log("KEY PRESSED:", event.key);
          });
-  
 document.addEventListener("keydown", function(event)
 {
-    console.log("KEY PRESSED:", event.key);
+    if (event.key === "Delete" && selectedObject)
+    {
+        selectedObject.remove();
+        selectedObject = null;
+    }
 });
