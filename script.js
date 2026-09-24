@@ -81,13 +81,12 @@ function makeDraggable(object)
 document.addEventListener("mousemove", function(event)
         {
           if (!isDragging)
+          {
             return;
+          }
 
-        object.style.left = 
-          `${event.clientX - offsetX}px`;
-
-          object.style.top = 
-          `${event.clientY - offsetY}px`;
+        object.style.left = `${event.clientX - offsetX}px`;
+        object.style.top = `${event.clientY - offsetY}px`;
           });
 
 document.addEventListener("mouseup", function()
