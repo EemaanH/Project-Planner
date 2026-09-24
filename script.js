@@ -5,23 +5,10 @@ let objectCount = 0;
 
 addObjectButton.addEventListener("click", function()
 {
-  const displayWidth = Number(
-    document.getElementById("displayWidth").value
-    );
+  const objectPanel = document.getElementById("objectPanel");
 
-  const displayHeight = Number(
-    document.getElementById("displayHeight").value
-    );
-
-  const objectName = prompt("What is the name of this object?");
-
-  const objectWidth = Number(
-    prompt("Enter object width in inches:")
-  );
-
-   const objectHeight = Number(
-     prompt("Enter object height in inches:")
-   );
+  objectPanel.style.display = "block";
+});
 
   if (
     !objectName ||
