@@ -43,3 +43,8 @@ button
   cursor: grab;
   user-select: none;
 }
+
+#objectPanel
+{
+  display: none;
+}
