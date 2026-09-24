@@ -137,3 +137,7 @@ document.addEventListener("keydown", function(event)
             alert(event.key);
          });
   
+document.addEventListener("keydown", function(event)
+{
+    console.log("KEY PRESSED:", event.key);
+});
