@@ -207,7 +207,7 @@ document.addEventListener("mouseup", function()
 
 document.addEventListener("keydown", function(event)
          {
-            if (event.key === "Backspace" && selectedObject)
+            if (event.key === "Backspace" && selectedObject && event.target.tagName !== "INPUT")
             {
                event.preventDefault();
                
