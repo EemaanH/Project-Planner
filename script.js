@@ -141,7 +141,4 @@ document.addEventListener("keydown", function(event)
             }
          });
 
-.object.selected
-{
-   border: 3px solid red;
-}
+
