@@ -172,6 +172,7 @@ function makeDraggable(object)
   let isDragging = false;
   let offsetX = 0;
   let offsetY = 0;
+  let scale = 1;
 
   object.addEventListener("mousedown", function(event)
       {
@@ -193,7 +194,7 @@ function makeDraggable(object)
          const displayHeight = Number(
          document.getElementById("displayHeight").value);
 
-         const scale = Math.min(
+         scale = Math.min(
             25,
             600 / displayWidth,
             450 / displayHeight
@@ -225,20 +226,6 @@ document.addEventListener("mousemove", function(event)
 
           object.style.left = `${newLeft}px`;
           object.style.top = `${newTop}px`;
-
-         const displayWidth = Number(
-            document.getElementById("displayWidth").value
-            );
-
-           const displayHeight = Number(
-              document.getElementById("displayHeight").value
-            );
-
-           const scale = Math.min(
-              25,
-              600 / displayWidth,
-              450 / displayHeight
-            );
 
            infoX.textContent = (newLeft / scale).toFixed(1) + " inches";
            infoY.textContent = (newTop / scale).toFixed(1) + " inches";
