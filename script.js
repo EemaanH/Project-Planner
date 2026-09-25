@@ -254,4 +254,39 @@ document.addEventListener("keydown", function(event)
             }
          });
 
+function updateDisplaySize()
+   {
+      const displayWidth = Number(
+         document.getElementById("displayWidth").value
+         );
+
+      const displayHeight = Number(
+         document.getElementById("displayHeight").value
+         );
+
+      if (displayWidth <= 0 || displayHeight <= 0)
+      {
+         return;
+      }
+
+      const maxDisplaySize = 600;
+
+      const displayScale = Math.min(
+         maxDisplaySize / displayWidth,
+         maxDisplaySize / displayHeight
+      );
+
+      display.style.width = `${displayWidth * displayScale}px`;
+      display.style.height = `${displayHeight * displayScale}px`;
+   }
+      document.getElementById("displayWidth").addEventListener(
+         "input",
+         updateDisplaySize
+         );
+
+      document.getElementById("displayHeight").addEventListener(
+         "input",
+         updateDisplaySize
+         );
+
 
