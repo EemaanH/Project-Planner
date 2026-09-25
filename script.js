@@ -18,11 +18,13 @@ editObjectButton.addEventListener("click", function()
 {
    if (!selectedObject)
    {
-      alert("Please select an object first.");
       return;
    }
+   document.getElementById("objectName").value = selectedObject.dataset.name;
 
-   alert("You selected an object to edit!");
+   document.getElementById("objectWidth").value = selectedObject.dataset.width;
+
+   document.getElementById("objectHeight").value = selectedObject.dataset.height;
 });
 
 // Create the object
@@ -65,11 +67,15 @@ createObjectButton.addEventListener("click", function()
     450 / displayHeight
     );
   
-  const object = document.createElement("div");
+const object = document.createElement("div");
 object.classList.add("object");
 
-  object.style.width = `${objectWidth * scale}px`;
-  object.style.height = `${objectHeight * scale}px`;
+object.dataset.name = objectName;
+object.dataset.width = objectWidth;
+object.dataset.height = objectHeight;
+
+object.style.width = `${objectWidth * scale}px`;
+object.style.height = `${objectHeight * scale}px`;
   
 object.style.left = `${20 + objectCount * 30}px`;
 object.style.top = `${20 + objectCount * 30}px`;
