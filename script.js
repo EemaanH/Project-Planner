@@ -186,6 +186,8 @@ function makeDraggable(object)
          infoName.textContent = selectedObject.dataset.name;
          infoWidth.textContent = selectedObject.dataset.width + " inches";
          infoHeight.textContent = selectedObject.dataset.height + " inches";
+         infoX.textContent = object.offsetLeft + " px";
+         infoY.textContent = object.offsetTop + " px";
 
          isDragging = true;
 
