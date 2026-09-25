@@ -134,6 +134,8 @@ document.addEventListener("keydown", function(event)
          {
             if (event.key === "Backspace" && selectedObject)
             {
+               event.preventDefault();
+               
                selectedObject.remove();
                selectedObject = null;
             }
