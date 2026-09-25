@@ -3,6 +3,7 @@ const createObjectButton = document.getElementById("createObject");
 const objectPanel = document.getElementById("objectPanel");
 const display = document.getElementById("display");
 const editObjectButton = document.getElementById("editObject");
+const updateObjectButton = document.getElementById("updateObject");
 
 let objectCount = 0;
 let selectedObject = null;
