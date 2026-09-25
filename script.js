@@ -140,3 +140,8 @@ document.addEventListener("keydown", function(event)
                selectedObject = null;
             }
          });
+
+.object.selected
+{
+   border: 3px solid red;
+}
