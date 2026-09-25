@@ -28,6 +28,61 @@ editObjectButton.addEventListener("click", function()
    document.getElementById("objectHeight").value = selectedObject.dataset.height;
 });
 
+//Updates the selected object
+updateObjectButton.addEventListener("click", function()
+   {
+      if (!selectedObject)
+      {
+         return;
+      }
+
+      const objectName =
+         document.getElementById("objectName").value;
+
+      const objectWidth = Number(
+         document.getElementById("objectWidth").value
+         );
+      const objectHeight = Number(
+         document.getElementById("objectHeight").value
+         );
+      
+      if (
+         !objectName ||
+         objectWidth <= 0 ||
+         objectHeight <= 0
+         )
+      {
+         alert("Please enter valid dimensions.");
+         return;
+      }
+
+      const displayWidth = Number(
+         document.getElementById("displayWidth").value
+         );
+
+      const displayHeight = Number(
+         document.getElementById("displayHeight").value
+         );
+
+      const scale = Math.min(
+         25,
+         600 / displayWidth,
+         450 / displayHeight
+         );
+
+      selectedObject.dataset.name = objectName;
+      selectedObject.dataset.width = objectWidth;
+      selectedObject.dataset.height = objectHeight;
+
+      selectedObject.textContent = objectName;
+
+      selectedObject.style.width = 
+         `${objectWidth * scale}px`;
+
+      selectedObject.style.height = 
+         `${objectHeight * scale}px`;
+   });
+
 // Create the object
 createObjectButton.addEventListener("click", function()
 {
