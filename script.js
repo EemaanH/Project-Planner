@@ -2,6 +2,7 @@ const addObjectButton = document.getElementById("addObject");
 const createObjectButton = document.getElementById("createObject");
 const objectPanel = document.getElementById("objectPanel");
 const display = document.getElementById("display");
+const editObjectButton = document.getElementById("editObject");
 
 let objectCount = 0;
 let selectedObject = null;
@@ -10,6 +11,18 @@ let selectedObject = null;
 addObjectButton.addEventListener("click", function()
 {
    objectPanel.style.display = "block";
+});
+
+//Edits the object
+editObjectButton.addEventListener("click", function()
+{
+   if (!selectedObject)
+   {
+      alert("Please select an object first.");
+      return;
+   }
+
+   alert("You selected an object to edit!");
 });
 
 // Create the object
