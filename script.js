@@ -77,6 +77,10 @@ updateObjectButton.addEventListener("click", function()
       selectedObject.dataset.width = objectWidth;
       selectedObject.dataset.height = objectHeight;
 
+      infoName.textContent = objectName;
+      infoWidth.textContent = objectWidth + " inches";
+      infoHeight.textContent = objectHeight + " inches";
+
       selectedObject.textContent = objectName;
 
       selectedObject.style.width = 
