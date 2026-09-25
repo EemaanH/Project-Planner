@@ -232,6 +232,8 @@ document.addEventListener("keydown", function(event)
                infoName.textContent = "None";
                infoWidth.textContent = "-";
                infoHeight.textContent = "-";
+               infoX.textContent = "-";
+               infoY.textContent = "-";
             }
          });
 
