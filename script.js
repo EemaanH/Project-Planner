@@ -91,12 +91,18 @@ function makeDraggable(object)
 
   object.addEventListener("mousedown", function(event)
       {
-        selectedObject = object;
-         
-        isDragging = true;
+        if (selectedObject)
+        {
+           selectedObject.classList.remove("selected");
+        }
 
-        offsetX = event.clientX - object.offsetLeft;
-        offsetY = event.clientY - object.offsetTop;
+         selectedObject = object;
+         selectedObject.classList.add("selected");
+
+         isDragging = true;
+
+         offsetX = event.clientX - object.offsetLeft;
+         offsetY = event.clientY - object.offsetTop;
       });
 
 document.addEventListener("mousemove", function(event)
@@ -124,14 +130,6 @@ document.addEventListener("mouseup", function()
           });
 }
 
-document.addEventListener("keydown", function(event)
-          {
-             if (event.key === "Delete" && selectedObject)
-             {
-                selectedObject.remove();
-                selectedObject = null;
-             }
-          });
 document.addEventListener("keydown", function(event)
          {
             if (event.key === "Backspace" && selectedObject)
