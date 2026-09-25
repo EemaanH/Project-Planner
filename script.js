@@ -186,8 +186,21 @@ function makeDraggable(object)
          infoName.textContent = selectedObject.dataset.name;
          infoWidth.textContent = selectedObject.dataset.width + " inches";
          infoHeight.textContent = selectedObject.dataset.height + " inches";
-         infoX.textContent = object.offsetLeft + " px";
-         infoY.textContent = object.offsetTop + " px";
+         
+         const displayWidth = Number(
+         document.getElementById("displayWidth").value);
+
+         const displayHeight = Number(
+         document.getElementById("displayHeight").value);
+
+         const scale = Math.min(
+            25,
+            600 / displayWidth,
+            450 / displayHeight
+            );
+
+         infoX.textContent = (object.offsetLeft / scale).toFixed(1) + " inches";
+         infoY.textContent = (object.offsetTop / scale).toFixed(1) + " inches";
 
          isDragging = true;
 
