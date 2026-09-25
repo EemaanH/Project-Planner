@@ -227,8 +227,8 @@ document.addEventListener("mousemove", function(event)
           object.style.left = `${newLeft}px`;
           object.style.top = `${newTop}px`;
 
-           infoX.textContent = (newLeft / scale).toFixed(1) + " inches";
-           infoY.textContent = (newTop / scale).toFixed(1) + " inches";
+          infoX.textContent = (newLeft / scale).toFixed(1) + " inches";
+          infoY.textContent = (newTop / scale).toFixed(1) + " inches";
           });
 
 document.addEventListener("mouseup", function()
