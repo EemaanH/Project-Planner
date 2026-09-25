@@ -77,12 +77,36 @@ button
   box-sizing: border-box;
 }
 
+.objectButtons
+{
+  margin-top: 10px;
+}
+
+.objectButtons button
+{
+  padding: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
 #createObject
 {
   width: 100%;
-  padding: 10px;
-  cursor: pointer;
 }
+
+.editButtons
+{
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+#editObject,
+#updateObject
+{
+  flex: 1;
+}
+
 .object.selected
 {
    border: 3px solid red;
