@@ -224,6 +224,10 @@ document.addEventListener("keydown", function(event)
                
                selectedObject.remove();
                selectedObject = null;
+
+               infoName.textContent = "None";
+               infoWidth.textContent = "-";
+               infoHeight.textContent = "-";
             }
          });
 
