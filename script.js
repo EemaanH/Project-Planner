@@ -7,6 +7,8 @@ const updateObjectButton = document.getElementById("updateObject");
 const infoName = document.getElementById("infoName");
 const infoWidth = document.getElementById("infoWidth");
 const infoHeight = document.getElementById("infoHeight");
+const infoX = document.getElementById("infoX");
+const infoY = document.getElementById("infoY");
 
 let objectCount = 0;
 let selectedObject = null;
