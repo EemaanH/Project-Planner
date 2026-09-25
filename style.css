@@ -83,3 +83,7 @@ button
   padding: 10px;
   cursor: pointer;
 }
+.object.selected
+{
+   border: 3px solid red;
+}
