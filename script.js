@@ -4,6 +4,9 @@ const objectPanel = document.getElementById("objectPanel");
 const display = document.getElementById("display");
 const editObjectButton = document.getElementById("editObject");
 const updateObjectButton = document.getElementById("updateObject");
+const infoName = document.getElementById("infoName");
+const infoWidth = document.getElementById("infoWidth");
+const infoHeight = document.getElementById("infoHeight");
 
 let objectCount = 0;
 let selectedObject = null;
@@ -173,6 +176,10 @@ function makeDraggable(object)
 
          selectedObject = object;
          selectedObject.classList.add("selected");
+
+         infoName.textContent = selectedObject.dataset.name;
+         infoWidth.textContent = selectedObject.dataset.width + " inches";
+         infoHeight.textContent = selectedObject.dataset.height + " inches";
 
          isDragging = true;
 
