@@ -139,6 +139,8 @@ object.classList.add("object");
 object.dataset.name = objectName;
 object.dataset.width = objectWidth;
 object.dataset.height = objectHeight;
+object.dataset.x = 20 / scale;
+object.dataset.y = 20 / scale;
 
 object.style.width = `${objectWidth * scale}px`;
 object.style.height = `${objectHeight * scale}px`;
@@ -231,6 +233,9 @@ document.addEventListener("mousemove", function(event)
 
           infoX.textContent = (newLeft / scale).toFixed(1) + " inches";
           infoY.textContent = (newTop / scale).toFixed(1) + " inches";
+
+         object.dataset.x = newLeft / scale;
+         object.dataset.y = newTop / scale;
           });
 
 document.addEventListener("mouseup", function()
@@ -289,11 +294,17 @@ function updateDisplaySize()
          object.style.width = `${objectWidth * displayScale}px`;
          object.style.height = `${objectHeight * displayScale}px`;
 
+         let newLeft = Number(object.dataset.x) * displayScale;
+         let newTop = Number(object.dataset.y) * displayScale;
+
          const maxLeft = display.clientWidth - object.offsetWidth;
          const maxTop = display.clientHeight - object.offsetHeight;
 
-         object.style.left = `${Math.min(object.offsetLeft, maxLeft)}px`;
-         object.style.top = `${Math.min(object.offsetTop, maxTop)}px`;
+         newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+         newTop = Math.max(0, Math.min(newTop, maxTop));
+
+         object.style.left = `${newLeft}px`;
+         object.style.top = `${newTop}px`;
       });
 
       checkObjectFit();
