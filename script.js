@@ -70,9 +70,8 @@ updateObjectButton.addEventListener("click", function()
          );
 
       const scale = Math.min(
-         25,
          600 / displayWidth,
-         450 / displayHeight
+         600 / displayHeight
          );
 
       selectedObject.dataset.name = objectName;
@@ -127,9 +126,8 @@ createObjectButton.addEventListener("click", function()
   }
 
   const scale = Math.min(
-    25,
     600 / displayWidth,
-    450 / displayHeight
+    600 / displayHeight
     );
   
 const object = document.createElement("div");
@@ -195,9 +193,8 @@ function makeDraggable(object)
          document.getElementById("displayHeight").value);
 
          scale = Math.min(
-            25,
             600 / displayWidth,
-            450 / displayHeight
+            600 / displayHeight
             );
 
          infoX.textContent = (object.offsetLeft / scale).toFixed(1) + " inches";
@@ -278,6 +275,15 @@ function updateDisplaySize()
 
       display.style.width = `${displayWidth * displayScale}px`;
       display.style.height = `${displayHeight * displayScale}px`;
+
+      display.querySelectorAll("object").forEach(function(object)
+      {
+         const objectWidth = Number(object.dataset.width);
+         const objectHeight = Number(object.dataset.height);
+
+         object.style.width = `${objectWidth * displayScale}px`;
+         object.style.height = `${objectHeight * displayScale}px`;
+      });
    }
       document.getElementById("displayWidth").addEventListener(
          "input",
