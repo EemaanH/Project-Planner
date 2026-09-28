@@ -129,3 +129,20 @@ button
 {
   color: red;
 }
+#overlapStatus
+{
+  text-align: center;
+  margin: 10px auto;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#overlapStatus.overlapping
+{
+  color: red;
+}
+
+#overlapStatus.not-overlapping
+{
+  color: green;
+}
