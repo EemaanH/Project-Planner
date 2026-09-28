@@ -93,6 +93,7 @@ updateObjectButton.addEventListener("click", function()
          `${objectHeight * scale}px`;
 
       checkObjectFit();
+      checkObjectOverlap();
    });
 
 // Create the object
