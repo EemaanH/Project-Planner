@@ -119,3 +119,13 @@ button
   font-weight: bold;
   font-size: 18px;
 }
+
+#fitStatus.fits
+{
+  color: green;
+}
+
+#fitStatus.does-not-fit
+{
+  color: red;
+}
