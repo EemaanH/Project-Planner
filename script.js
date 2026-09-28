@@ -329,12 +329,24 @@ function updateDisplaySize()
          const displayHeight = Number(
             document.getElementById("displayHeight").value
          );
-         const objectWidth = Number(selectedObject.dataset.width);
-         const objectHeight = Number(selectedObject.dataset.height);
+
+         const objectX = selectedObject.offsetLeft;
+         const objectY = selectedObject.offsetTop;
+
+         const scale = Math.min(
+            600 / displayWidth,
+            600 / displayHeight
+         );
+
+         const objectRight = (objectX + selectedObject.offsetWidth) / scale;
+         
+         const objectBottom = (objectY + selectedObject.offsetHeight) / scale;
 
          if (
-            objectWidth <= displayWidth &&
-            objectHeight <= displayHeight
+            objectX >= 0 &&
+            objectY >= 0 &&
+            objectRight <= displayWidth &&
+            objectBottom <= displayHeight
             )
          {
             fitStatus.textContent = "Fits inside display";
