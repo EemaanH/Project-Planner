@@ -139,14 +139,18 @@ object.classList.add("object");
 object.dataset.name = objectName;
 object.dataset.width = objectWidth;
 object.dataset.height = objectHeight;
-object.dataset.x = 20 / scale;
-object.dataset.y = 20 / scale;
+   
+const initialLeft = 20 + objectCount * 30;
+const initialTop = 20 + objectCount * 30;
+
+object.dataset.x = initialLeft / scale;
+object.dataset.y = initialTop / scale;
 
 object.style.width = `${objectWidth * scale}px`;
 object.style.height = `${objectHeight * scale}px`;
-  
-object.style.left = `${20 + objectCount * 30}px`;
-object.style.top = `${20 + objectCount * 30}px`;
+
+object.style.left = `${initialLeft}px`;
+object.style.top = `${initialTop}px`;
 
 object.textContent = objectName;
 
