@@ -295,6 +295,8 @@ function updateDisplaySize()
          object.style.left = `${Math.min(object.offsetLeft, maxLeft)}px`;
          object.style.top = `${Math.min(object.offsetTop, maxTop)}px`;
       });
+
+      checkObjectFit();
    }
       document.getElementById("displayWidth").addEventListener(
          "input",
