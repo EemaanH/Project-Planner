@@ -276,7 +276,7 @@ function updateDisplaySize()
       display.style.width = `${displayWidth * displayScale}px`;
       display.style.height = `${displayHeight * displayScale}px`;
 
-      display.querySelectorAll("object").forEach(function(object)
+      display.querySelectorAll(".object").forEach(function(object)
       {
          const objectWidth = Number(object.dataset.width);
          const objectHeight = Number(object.dataset.height);
