@@ -90,6 +90,8 @@ updateObjectButton.addEventListener("click", function()
 
       selectedObject.style.height = 
          `${objectHeight * scale}px`;
+
+      checkObjectFit();
    });
 
 // Create the object
@@ -296,22 +298,21 @@ function updateDisplaySize()
    }
       document.getElementById("displayWidth").addEventListener(
          "input",
-         updateDisplaySize
-         );
-      document.getElementById("displayWidth").addEventListener(
-         "input",
-         checkObjectFit
-         );
-
-      document.getElementById("displayHeight").addEventListener(
-         "input",
-         updateDisplaySize
-         );
-
-      document.getElementById("displayHeight").addEventListener(
-         "input",
-         checkObjectFit
-         );
+         function()
+         {
+            updateDisplaySize();
+            checkObjectFit();
+         }
+         
+      );
+   document.getElementById("displayHeight").addEventListener(
+      "input",
+      function()
+      {
+         updateDisplaySize();
+         checkObjectFit();
+      }
+      );
 
       function checkObjectFit()
       {
