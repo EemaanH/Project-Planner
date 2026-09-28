@@ -298,10 +298,19 @@ function updateDisplaySize()
          "input",
          updateDisplaySize
          );
+      document.getElementById("displayWidth").addEventListener(
+         "input",
+         checkObjectFit
+         );
 
       document.getElementById("displayHeight").addEventListener(
          "input",
          updateDisplaySize
+         );
+
+      document.getElementById("displayHeight").addEventListener(
+         "input",
+         checkObjectFit
          );
 
       function checkObjectFit()
