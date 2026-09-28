@@ -10,6 +10,7 @@ const infoHeight = document.getElementById("infoHeight");
 const infoX = document.getElementById("infoX");
 const infoY = document.getElementById("infoY");
 const fitStatus = document.getElementById("fitStatus");
+const overlapStatus = document.getElementById("overlapStatus");
 
 let objectCount = 0;
 let selectedObject = null;
