@@ -373,5 +373,44 @@ function updateDisplaySize()
             fitStatus.className = "does-not-fit";
          }
       }
+function checkObjectOverlap()
+{
+   if(!selectedObject)
+   {
+      return false;
+   }
 
+   const selectedLeft = selectedObject.offsetLeft;
+   const selectedTop = selectedObject.offsetTop;
+   const selectedRight = selectedLeft + selectedObject.offsetWidth;
+   const selectedBottom = selectedTop + selectedObject.offsetHeight;
+
+   const objects = display.querySelectorAll(".object");
+
+   for(const object of objects)
+      {
+         if (object === selectedObject)
+         {
+            continue;
+         }
+
+         const objectLeft = object.offsetLeft;
+         const objectTop = object.offsetTop;
+         const objectRight = objectLeft + object.offsetWidth;
+         const objectBottom = objectTop + object.offsetHeight;
+
+         if(
+            selectedLeft < objectRight &&
+            selectedRight > objectLeft &&
+            selectedTop < objectBottom &&
+            selectedBottom > objectTop
+            )
+         {
+            return true;
+         }
+      }
+
+      return false;
+   }
+   
 
