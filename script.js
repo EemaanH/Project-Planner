@@ -9,6 +9,7 @@ const infoWidth = document.getElementById("infoWidth");
 const infoHeight = document.getElementById("infoHeight");
 const infoX = document.getElementById("infoX");
 const infoY = document.getElementById("infoY");
+const fitStatus = document.getElementById("fitStatus");
 
 let objectCount = 0;
 let selectedObject = null;
@@ -200,6 +201,8 @@ function makeDraggable(object)
          infoX.textContent = (object.offsetLeft / scale).toFixed(1) + " inches";
          infoY.textContent = (object.offsetTop / scale).toFixed(1) + " inches";
 
+         checkObjectFit();
+
          isDragging = true;
 
          offsetX = event.clientX - object.offsetLeft;
@@ -300,5 +303,36 @@ function updateDisplaySize()
          "input",
          updateDisplaySize
          );
+
+      function checkObjectFit()
+      {
+         if(!selectedObject)
+         {
+            fitStatus.textContent = "";
+            return;
+         }
+
+         const displayWidth = Number(
+            document.getElementById("displayWidth").value
+         );
+
+         const displayHeight = Number(
+            document.getElementById("displayHeight").value
+         );
+         const objectWidth = Number(selectedObject.dataset.width);
+         const objectHeight = Number(selectedObject.dataset.height);
+
+         if (
+            objectWidth <= displayWidth &&
+            objectHeight <= displayHeight
+            )
+         {
+            fitStatus.textContent = "Fits inside display";
+         }
+         else
+         {
+            fitStatus.textContent = "Does not fit inside display";
+         }
+      }
 
 
