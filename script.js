@@ -211,6 +211,7 @@ function makeDraggable(object)
          infoY.textContent = (object.offsetTop / scale).toFixed(1) + " inches";
 
          checkObjectFit();
+         checkObjectOverlap();
 
          isDragging = true;
 
@@ -241,6 +242,8 @@ document.addEventListener("mousemove", function(event)
 
          object.dataset.x = newLeft / scale;
          object.dataset.y = newTop / scale;
+
+         checkObjectOverlap();
           });
 
 document.addEventListener("mouseup", function()
@@ -378,6 +381,7 @@ function checkObjectOverlap()
 {
    if(!selectedObject)
    {
+      overlapStatus.textContent = "";
       return false;
    }
 
@@ -407,9 +411,14 @@ function checkObjectOverlap()
             selectedBottom > objectTop
             )
          {
+            overlapStatus.textContent = "Objects are overlapping";
+            overlapStatus.className = "overlapping";
+            
             return true;
          }
       }
+      overlapStatus.textContent = "Objects are not overlapping";
+      overlapStatus.className = "not-overlapping";
 
       return false;
    }
