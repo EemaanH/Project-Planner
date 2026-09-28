@@ -283,6 +283,12 @@ function updateDisplaySize()
 
          object.style.width = `${objectWidth * displayScale}px`;
          object.style.height = `${objectHeight * displayScale}px`;
+
+         const maxLeft = display.clientWidth - object.offsetWidth;
+         const maxTop = display.clientHeight - object.offsetHeight;
+
+         object.style.left = `${Math.min(object.offsetLeft, maxLeft)}px`;
+         object.style.top = `${Math.min(object.offsetTop, maxTop)}px`;
       });
    }
       document.getElementById("displayWidth").addEventListener(
