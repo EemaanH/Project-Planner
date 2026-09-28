@@ -111,3 +111,11 @@ button
 {
    border: 3px solid red;
 }
+
+#fitStatus
+{
+  text-align: center;
+  margin: 15px auto;
+  font-weight: bold;
+  font-size: 18px;
+}
