@@ -303,7 +303,6 @@ function updateDisplaySize()
          function()
          {
             updateDisplaySize();
-            checkObjectFit();
          }
          
       );
@@ -312,7 +311,6 @@ function updateDisplaySize()
       function()
       {
          updateDisplaySize();
-         checkObjectFit();
       }
       );
 
@@ -340,10 +338,12 @@ function updateDisplaySize()
             )
          {
             fitStatus.textContent = "Fits inside display";
+            fitStatus.className = "fits";
          }
          else
          {
             fitStatus.textContent = "Does not fit inside display";
+            fitStatus.className = "does-not-fit";
          }
       }
 
