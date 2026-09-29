@@ -92,9 +92,12 @@ updateObjectButton.addEventListener("click", function()
       selectedObject.style.height = 
          `${objectHeight * scale}px`;
 
+      selectedObject.dataset.x = selectedObject.offsetLeft / scale;
+      selectedObject.dataset.y = selectedObject.offsetTop / scale; 
+
       checkObjectFit();
       checkObjectOverlap();
-   });
+   }
 
 // Create the object
 createObjectButton.addEventListener("click", function()
@@ -267,6 +270,9 @@ document.addEventListener("keydown", function(event)
                infoHeight.textContent = "-";
                infoX.textContent = "-";
                infoY.textContent = "-";
+               
+               fitStatus.textContent = "";
+               overlapStatus.textContent = "";
             }
          });
 
@@ -314,9 +320,19 @@ function updateDisplaySize()
 
          object.style.left = `${newLeft}px`;
          object.style.top = `${newTop}px`;
+
+         object.dataset.x = newLeft / displayScale;
+         object.dataset.y = newTop / displayScale;
+
+         if (object === selectedObject)
+         {
+            infoX.textContent = (newLeft / displayScale).toFixed(1) + " inches";
+            infoY.textContent = (newTop / displayScale).toFixed(1) + " inches";
+         }
       });
 
       checkObjectFit();
+      checkObjectOverlap();
    }
       document.getElementById("displayWidth").addEventListener(
          "input",
