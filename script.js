@@ -92,8 +92,20 @@ updateObjectButton.addEventListener("click", function()
       selectedObject.style.height = 
          `${objectHeight * scale}px`;
 
-      selectedObject.dataset.x = selectedObject.offsetLeft / scale;
-      selectedObject.dataset.y = selectedObject.offsetTop / scale; 
+      let newLeft = selectedObject.offsetLeft;
+      let newTop = selectedObject.offsetTop;
+
+      const maxLeft = display.clientWidth - selectedObject.offsetWidth;
+      const maxTop = display.clientHeight - selectedObject.offsetHeight;
+
+      newLeft = Math.max(0, Math.Min(newLeft, maxLeft));
+      newTop = Math.max(0, Math.min(newTop, maxTop));
+
+      selectedObject.style.left = `${newLeft}px`;
+      selectedObject.style.top = `${newTop}px`;
+
+      selectedObject.dataset.x = newLeft / scale;
+      selectedObject.dataset.y = newTop / scale;
 
       checkObjectFit();
       checkObjectOverlap();
