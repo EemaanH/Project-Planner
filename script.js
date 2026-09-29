@@ -197,6 +197,41 @@ document.getElementById("objectHeight").value = "";
 //Make Objects Draggable 
 function makeDraggable(object)
 {
+   if (selectedObject)
+   { 
+      selectedObject.classList.remove("selected");
+   }
+
+   selectedObject = object;
+   selectedObject.classList.add("selected");
+
+   infoName.textContent = selectedObject.dataset.name;
+   infoWidth.textContent = selectedObject.dataset.width + " inches";
+   infoHeight.textContent = selectedObject.dataset.height + " inches";
+
+   const displayWidth = Number(
+      document.getElementById("displayWidth").value
+      );
+
+   const displayHeight = Number(
+      document.getElementById("displayHeight").value
+      );
+
+   const scale = Math.min(
+      600 / displayWidth,
+      600 / displayHeight
+      );
+
+   infoX.textContent = 
+      (object.offsetLeft / scale).toFixed(1) + " inches";
+
+   infoY.textContent = 
+      (object.offsetTop / scale).toFixed(1) + " inches";
+
+   checkObjectFit();
+   checkObjectOverlap();
+});
+
   let isDragging = false;
   let offsetX = 0;
   let offsetY = 0;
