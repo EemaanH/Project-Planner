@@ -168,6 +168,22 @@ display.appendChild(object);
 
 makeDraggable(object);
 
+if(selectedObject)
+{
+   selectedObject.classList.remove("selected");
+}
+   selectedObject = object;
+   selectedObject.classList.add("selected");
+
+   infoName.textContent = object.dataset.name;
+   infoWidth.textContent = object.dataset.width + " inches";
+   infoHeight.textContent = object.dataset.height + " inches";
+   infoX.textContent = (object.offsetLeft / scale).toFixed(1) + " inches";
+   infoY.textContent = (object.offsetTop / scale).toFixed(1) + " inches";
+
+   checkObjectFit();
+   checkObjectOverlap();
+
 objectCount++;
   
 // Clear the form
