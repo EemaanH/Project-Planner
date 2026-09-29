@@ -217,6 +217,7 @@ function makeDraggable(object)
    selectedObject.classList.add("selected");
 
    objectPanel.style.display = "block";
+   objectPanel.scrollIntoView({ behavior: "smooth", block: "center"});
 
    infoName.textContent = selectedObject.dataset.name;
    infoWidth.textContent = selectedObject.dataset.width + " inches";
