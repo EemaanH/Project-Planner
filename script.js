@@ -97,7 +97,7 @@ updateObjectButton.addEventListener("click", function()
 
       checkObjectFit();
       checkObjectOverlap();
-   }
+   });
 
 // Create the object
 createObjectButton.addEventListener("click", function()
