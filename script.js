@@ -197,6 +197,13 @@ document.getElementById("objectHeight").value = "";
 //Make Objects Draggable 
 function makeDraggable(object)
 {
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+  let scale = 1;
+
+  object.addEventListener("click", function()
+  {
    if (selectedObject)
    { 
       selectedObject.classList.remove("selected");
@@ -231,11 +238,6 @@ function makeDraggable(object)
    checkObjectFit();
    checkObjectOverlap();
 });
-
-  let isDragging = false;
-  let offsetX = 0;
-  let offsetY = 0;
-  let scale = 1;
 
   object.addEventListener("mousedown", function(event)
       {
