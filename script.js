@@ -204,6 +204,8 @@ function makeDraggable(object)
 
   object.addEventListener("click", function()
   {
+   console.log("CLICKED:", object.dataset.name);
+     
    if (selectedObject)
    { 
       selectedObject.classList.remove("selected");
