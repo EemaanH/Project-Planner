@@ -197,7 +197,7 @@ document.getElementById("objectHeight").value = "";
 //Make Objects Draggable 
 function makeDraggable(object)
 {
-  console.log("makeDraggable is running:", onject.dataset.name);
+  console.log("makeDraggable is running:", object.dataset.name);
    
   let isDragging = false;
   let offsetX = 0;
